@@ -30,7 +30,7 @@ app.get("/allNotes", (req, res) => {
     if(!err)
         res.send(rows);
     else
-        console.log(err);
+        console.log("Couldn't Select." + JSON.stringify(err, undefined, 2));
 })
 })
 
@@ -39,7 +39,7 @@ app.get("/selectById/:id", (req, res) => {
     if(!err)
         res.send(rows);
     else
-        console.log(err);
+        console.log("Couldn't Select." + JSON.stringify(err, undefined, 2));
 })
 })
 
@@ -49,7 +49,7 @@ app.get("/deleteById/:id", (req, res) => {
     if(!err)
         res.send("Deleted Successfully");
     else
-        console.log(err);
+        console.log("Couldn't Delete." + JSON.stringify(err, undefined, 2));
 })
 })
 
