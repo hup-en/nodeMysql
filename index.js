@@ -10,9 +10,9 @@ const PORT = 4400;
 const connection = mysql.createConnection(
     {
         host: 'localhost',
-        user: "hupens",
-        password: "hupen1432",
-        database: "tikotnote"
+        user: "",
+        password: "",
+        database: ""
     }
 )
 
@@ -68,7 +68,7 @@ app.get("/insertNewNote", (req, res) => {
 
 app.get("/updateNote/:id", (req, res) => {
     // use req.body(paramerters for sql) to get data from client
-    
+
     connection.query("UPDATE notes SET title = 'Cool Express' WHERE id = ?", [req.params.id], (err, results) => {
     if(!err){
         res.send("Data Updated successfully.");
